@@ -38,4 +38,4 @@
 
 </head>
 
-<body class="theme-red">
+<body class="theme-<?php echo APP_COLOR?>">

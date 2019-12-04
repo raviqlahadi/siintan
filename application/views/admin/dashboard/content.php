@@ -16,32 +16,32 @@
                             <div class="col-md-4" style="padding-top:20px">
                                 <div class="row clearfix">
                                     <div class="col-md-12">
-                                        <h1 style="color:#F44336!important">Selamat Datang Di Coreigniter</h1>
-                                        <p>Corebase Project Untuk Codeigniter </p>
-                                        <a href="<?php echo site_url('setting/menu') ?>"><button class="btn btn-primary waves-effect">Daftar Menu</button></a>
-                                        <a href="<?php echo site_url('setting/user') ?>"><button class="btn btn-warning waves-effect">Daftar User</button></a>
+                                        <h1 style="color:#FF9800!important">Selamat Datang Di <?php echo APP_NAME ?></h1>
+                                        <p><?php echo APP_DESC ?> </p>
+                                        <a href="<?php echo site_url('setting/menu') ?>"><button class="btn btn-primary waves-effect">Daftar Kawasan</button></a>
+                                        <a href="<?php echo site_url('setting/user') ?>"><button class="btn btn-warning waves-effect">Daftar Lahan</button></a>
                                     </div>
                                 </div>
                                 <div class="row clearfix" style="margin-top:30px">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="info-box bg-blue hover-expand-effect">
                                             <div class="icon">
-                                                <i class="material-icons">list</i>
+                                                <i class="material-icons">view_agenda</i>
                                             </div>
                                             <div class="content">
-                                                <div class="text">Menu</div>
-                                                <div class="number count-to" data-from="0" data-to="<?php echo $count_words ?>" data-speed="15" data-fresh-interval="20"><?php echo $count_words ?></div>
+                                                <div class="text">Kawasan</div>
+                                                <div class="number count-to" data-from="0" data-to="<?php echo $count_regions ?>" data-speed="15" data-fresh-interval="20"><?php echo $count_regions ?></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="info-box bg-orange hover-expand-effect">
                                             <div class="icon">
-                                                <i class="material-icons">people</i>
+                                                <i class="material-icons">where_to_vote</i>
                                             </div>
                                             <div class="content">
-                                                <div class="text">User</div>
-                                                <div class="number count-to" data-from="0" data-to="<?php echo $count_languages ?>" data-speed="1000" data-fresh-interval="20"><?php echo $count_languages ?></div>
+                                                <div class="text">Lahan</div>
+                                                <div class="number count-to" data-from="0" data-to="<?php echo $count_lands ?>" data-speed="1000" data-fresh-interval="20"><?php echo $count_lands ?></div>
                                             </div>
                                         </div>
                                     </div>

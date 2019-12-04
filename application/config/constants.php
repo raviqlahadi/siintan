@@ -85,8 +85,9 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 // custom
-define('APP_NAME', 'Coreigniter');
+define('APP_NAME', 'SiIntan');
+define('APP_COLOR', 'orange');
 define('APP_AUTHOR', 'Techno\'s Studio');
-define('APP_DESC', 'One core to rule them all');
+define('APP_DESC', 'Sistem Informasi Pertanahan');
 define('FAVICON_IMAGE', 'assets/favicon.ico');
-define('ICON_IMAGE', 'assets/logo/coreigniter.png');
+define('ICON_IMAGE', 'assets/logo/siintan.png');

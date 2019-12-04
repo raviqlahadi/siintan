@@ -29,7 +29,7 @@
                             <div class="col-lg-12">
                                 <?php if (isset($alert)) echo $alert; ?>
                             </div>
-                            <?php $this->load->view('templates/_admin_parts/form'); ?>
+                            <?php $this->load->view('templates/_admin_parts/form_multipart'); ?>
                         </div>
                     </div>
                 </div>

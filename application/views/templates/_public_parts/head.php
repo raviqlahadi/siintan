@@ -1,33 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
+
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Responsive One Page Multipurpose Template" />
+  <meta name="keywords" content="agency, bootstrap, business, corporate, creative, landing page, marketing, multipurpose, product, product launch, responsive, software, startup, startup landing page" />
+  <meta name="author" content="ThemesBoss" />
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="<?php echo APP_DESC ?>" />
-  <meta name="author" content="<?php echo APP_AUTHOR ?>">
+  <!-- Site Title -->
+  <title><?php echo APP_NAME?></title>
 
-  <title><?php echo APP_NAME ?></title>
+  <!-- Site favicon -->
+  <link rel="shortcut icon" href="">
 
-  <link rel="shortcut icon" type="image/png" href="<?php echo base_url().FAVICON_IMAGE;?>"/>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="<?php echo base_url('assets/public/')?>css/bootstrap.min.css" type="text/css">
 
-  <!-- Google Fonts -->
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik">
-<!-- CSS Global Compulsory -->
-<link rel="stylesheet" href="<?php echo base_url()?>assets/vendor/bootstrap/bootstrap.min.css">
-<!-- CSS Global Icons -->
-<link rel="stylesheet" href="<?php echo base_url()?>assets/vendor/icon-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/vendor/animate.css">
-<!-- CSS Unify -->
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/public/unify-core.css">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/public/unify-components.css">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/public/unify-globals.css">
+  <!-- MFP Css -->
+  <link rel="stylesheet" href="<?php echo base_url('assets/public/')?>css/magnific-popup.css">
 
-<!-- CSS Customization -->
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/public/custom.css">
+  <!-- Material Icon -->
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/public/')?>css/materialdesignicons.min.css" />
 
+  <!-- Pe7 Icon -->
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/public/')?>css/pe-icon-7.css">
+
+  <!-- Owl Slider -->
+  <link rel="stylesheet" href="<?php echo base_url('assets/public/')?>css/owl.carousel.css" />
+  <link rel="stylesheet" href="<?php echo base_url('assets/public/')?>css/owl.theme.css" />
+  <link rel="stylesheet" href="<?php echo base_url('assets/public/')?>css/owl.transitions.css" />
+
+  <!-- Custom  Css -->
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/public/')?>css/style.css" />
 
 </head>
+
 <body>
-  <main>

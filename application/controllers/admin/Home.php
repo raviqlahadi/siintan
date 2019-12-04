@@ -10,8 +10,8 @@ class Home extends Admin_Controller {
 	public function index()
 	{
 		
-		$this->data['count_words'] = $this->m_count->counts('table_menus');
-		$this->data['count_languages'] = $this->m_count->counts('table_users');
+		$this->data['count_regions'] = $this->m_count->counts('table_regions');
+		$this->data['count_lands'] = $this->m_count->counts('table_lands');
 		// $this->data['count_sliders'] = $this->m_count->counts('table_sliders');
 		// $this->data['count_phonelists'] = $this->m_count->counts('table_phonelists');
 		$this->data[ "page_title" ] = "Beranda";

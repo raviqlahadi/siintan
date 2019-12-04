@@ -84,19 +84,19 @@ class MY_Controller extends CI_Controller {
     }
 
     public function getMenu(){
-      $this->load->model(array('m_menu','m_group_access'));
-      $group = $this->session->userdata('group_id');
-      $menu = [];
-      $access = $this->m_group_access->getWhere(array('group_id'=>$group));
-	  //var_dump($access);
-      foreach ($access as $key => $value) {
-		
-        array_push($menu, $this->m_menu->getWhere(array('id'=>$value->menu_id,'status'=>1))[0]);
-      }
-      foreach ($menu as $km => $vm) {
-        $vm->submenu = $this->m_menu->getWhere(array('parent_id'=>$vm->id,'status'=>1));
-      }
-      return $menu;
+		$this->load->model(array('m_menu', 'm_group_access'));
+		$group = $this->session->userdata('group_id');
+		$menu = [];
+		$access = $this->m_group_access->getWhere(array('group_id' => $group));
+		//var_dump($access);
+		foreach ($access as $key => $value) {
+
+			array_push($menu, $this->m_menu->getWhere(array('id' => $value->menu_id, 'status' => 1))[0]);
+		}
+		foreach ($menu as $km => $vm) {
+			$vm->submenu = $this->m_menu->getWhere(array('parent_id' => $vm->id, 'status' => 1));
+		}
+		return $menu;
     }
 
 }

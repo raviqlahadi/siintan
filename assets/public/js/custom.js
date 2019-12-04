@@ -1,0 +1,11 @@
+/*
+-------------------------------------------------------------------------
+* Template Name    : Dragon - Responsive One Page Multipurpose Template * 
+* Author           : ThemesBoss                                         *
+* Version          : 1.0.0                                              *
+* Created          : September 2018                                     *
+* File Description : Main JS file of the template                      *
+*------------------------------------------------------------------------
+*/
+
+$(window).on("scroll",function(){$(window).scrollTop()>=50?$(".sticky").addClass("stickyadd"):$(".sticky").removeClass("stickyadd")}),$(".nav-item a").on("click",function(o){var t=$(this);$("html, body").stop().animate({scrollTop:$(t.attr("href")).offset().top-50},1500,"easeInOutExpo"),o.preventDefault()}),$(document).on("click",".navbar-collapse.show",function(o){$(o.target).is("a")&&$(this).collapse("hide")}),$(".video_presentation_play").magnificPopup({disableOn:700,type:"iframe",mainClass:"mfp-fade",removalDelay:160,preloader:!1,fixedContentPos:!1}),$("#navbarCollapse").scrollspy({offset:70}),$(".img-zoom").magnificPopup({type:"image",closeOnContentClick:!0,mainClass:"mfp-fade",gallery:{enabled:!0,navigateByImgClick:!0,preload:[0,1]}}),$(window).on("load",function(){var o=$(".work-filter"),t=$("#menu-filter");o.isotope({filter:"*",layoutMode:"masonry",animationOptions:{duration:750,easing:"linear"}}),t.find("a").on("click",function(){var a=$(this).attr("data-filter");return t.find("a").removeClass("active"),$(this).addClass("active"),o.isotope({filter:a,animationOptions:{animationDuration:750,easing:"linear",queue:!1}}),!1})}),$("#owl-demo").owlCarousel({autoPlay:1e4,items:3,itemsDesktop:[1199,3],itemsDesktopSmall:[979,3]});var a=0;$(window).on("scroll",function(){var o=$("#counter").offset().top-window.innerHeight;0==a&&$(window).scrollTop()>o&&($(".lan_fun_value").each(function(){var o=$(this),t=o.attr("data-count");$({countNum:o.text()}).animate({countNum:t},{duration:2e3,easing:"swing",step:function(){o.text(Math.floor(this.countNum))},complete:function(){o.text(this.countNum)}})}),a=1)}),$(window).on("scroll",function(){$(this).scrollTop()>100?$(".back_top").fadeIn():$(".back_top").fadeOut()}),$(".back_top").on("click",function(){return $("html, body").animate({scrollTop:0},1e3),!1});

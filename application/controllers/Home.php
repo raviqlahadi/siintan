@@ -9,6 +9,18 @@ class Home extends Public_Controller {
 
 	public function index(){
 		// TODO : tampilkan landing page bagi user yang belum daftar
-		redirect('auth');
+		$this->render("public/home", 'public_master');
+	}
+
+	public function profile()
+	{
+		// TODO : tampilkan landing page bagi user yang belum daftar
+		$this->render("public/profile", 'public_master');
+	}
+
+	public function map()
+	{
+		// TODO : tampilkan landing page bagi user yang belum daftar
+		$this->render("public/map", 'public_master');
 	}
 }

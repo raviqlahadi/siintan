@@ -1,57 +1,35 @@
-<header id="js-header" class="u-header u-header--static">
-  <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
-    <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
-      <div class="container">
-        <!-- Responsive Toggle Button -->
-        <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-          <span class="hamburger hamburger--slider">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-          </span>
-          </span>
-        </button>
-        <!-- End Responsive Toggle Button -->
+<!--Navbar Start-->
+<nav class="navbar navbar-expand-lg fixed-top custom-nav sticky">
+  <div class="container">
+    <!-- LOGO -->
+    <a class="logo navbar-brand" href="<?php echo site_url() ?>">
+      <img src="<?php echo base_url('assets/public/') ?>images/logo.png" alt="" class="img-fluid logo-light">
+      <img src="<?php echo base_url('assets/public/') ?>images/logo-dark.png" alt="" class="img-fluid logo-dark">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="mdi mdi-menu"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
+        <li class="nav-item active">
+          <a href="<?php echo ($this->uri->segment(2) != null) ? site_url('home') : '#home'; ?>" class="nav-link">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo ($this->uri->segment(2) != null) ? site_url('home') : null; ?>#about" class="nav-link">Tentang</a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo ($this->uri->segment(2) != null) ? site_url('home') : null; ?>#services" class="nav-link">Fitur</a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo site_url('home/profile') ?>" class="nav-link">Profil</a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo site_url('auth/login') ?>" class="nav-link">Login</a>
+        </li>
 
-        <!-- Logo -->
-        <a href="<?php echo base_url();?>" class="navbar-brand">
-          <img src="<?php echo base_url().ICON_IMAGE;?>" alt="" width="86px" height="32px">
-        </a>
-        <!-- End Logo -->
-
-        <!-- Navigation -->
-        <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
-          <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
-            <?php if (!$this->session->userdata()): ?>
-              <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                <a href="<?php echo site_url('dashboard')?>" class="nav-link g-py-7 g-px-0">Dashboard</a>
-              </li>
-            <?php endif; ?>
-            <?php
-            $nav = array(
-
-            );
-            foreach ($nav as $key => $value) { ?>
-              <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                <a href="<?php echo site_url('homepage/?page='.$value)?>" class="nav-link g-py-7 g-px-0"><?php echo $key ?></a>
-              </li>
-            <?php } ?>
-          </ul>
-        </div>
-        <!-- End Navigation -->
-        <?php if ($this->session->identity==null): ?>
-          <div class="d-inline-block g-hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">
-            <a class="btn  g-font-size-13 text-uppercase g-py-10 g-px-15" href="<?php echo site_url('auth/register')?>">Register</a>
-          </div>
-          <div class="d-inline-block g-hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">
-            <a class="btn g-font-size-13 u-btn-outline-pink  text-uppercase g-py-10 g-px-15" href="<?php echo site_url('auth/login')?>">Login</a>
-          </div>
-        <?php else: ?>
-          <div class="d-inline-block g-hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">
-            <a class="btn u-btn-outline-pink g-font-size-13 text-uppercase g-py-10 g-px-15" href="<?php echo site_url('admin')?>">Dashboard</a>
-          </div>
-        <?php endif; ?>
-
-      </div>
-    </nav>
+      </ul>
+      <a href="<?php echo site_url('home/map') ?>" class="btn btn-sm btn-custom navbar-btn btn-rounded">Peta Persebaran</a>
+    </div>
   </div>
-</header>
+</nav>
+<!-- Navbar End -->

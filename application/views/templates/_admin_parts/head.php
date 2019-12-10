@@ -34,6 +34,19 @@
 
   <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
   <link href="<?php echo base_url('assets/')?>css/admin/themes/all-themes.css" rel="stylesheet" />
+  
+  <?php
+    $plugin_arr = [
+      'light-gallery'=> '<link href="' . base_url('assets/') . 'vendor/light-gallery/css/lightgallery.css" rel="stylesheet">',
+      'dropzone'=> '<link href="' . base_url('assets/') . 'vendor/dropzone/dropzone.css" rel="stylesheet">'
+    ];
+    if(isset($plugin)){
+      foreach ($plugin as $key => $value) {
+        echo $plugin_arr[$value];
+      }
+    }
+  
+  ?>
 
 
 </head>

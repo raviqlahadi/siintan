@@ -1,22 +1,57 @@
  <!-- Jquery Core Js -->
- <script src="<?php echo base_url('assets/')?>vendor/jquery/jquery.min.js"></script>
+ <script src="<?php echo base_url('assets/') ?>vendor/jquery/jquery.min.js"></script>
 
-<!-- Bootstrap Core Js -->
-<script src="<?php echo base_url('assets/')?>vendor/bootstrap/js/bootstrap.js"></script>
+ <!-- Bootstrap Core Js -->
+ <script src="<?php echo base_url('assets/') ?>vendor/bootstrap/js/bootstrap.js"></script>
 
-<!-- Select Plugin Js -->
-<script src="<?php echo base_url('assets/')?>vendor/bootstrap-select/js/bootstrap-select.js"></script>
+ <!-- Select Plugin Js -->
+ <script src="<?php echo base_url('assets/') ?>vendor/bootstrap-select/js/bootstrap-select.js"></script>
 
-<!-- Slimscroll Plugin Js -->
-<script src="<?php echo base_url('assets/')?>vendor/jquery-slimscroll/jquery.slimscroll.js"></script>
+ <!-- Slimscroll Plugin Js -->
+ <script src="<?php echo base_url('assets/') ?>vendor/jquery-slimscroll/jquery.slimscroll.js"></script>
 
-<!-- Waves Effect Plugin Js -->
-<script src="<?php echo base_url('assets/')?>vendor/node-waves/waves.js"></script>
+ <!-- Waves Effect Plugin Js -->
+ <script src="<?php echo base_url('assets/') ?>vendor/node-waves/waves.js"></script>
 
-<!-- Custom Js -->
-<script src="<?php echo base_url('assets/')?>js/admin/admin.js"></script>
+ <?php
+    if (isset($plugin)) {
+    $plugin_arr = [
+        'light-gallery' => '<script src="' . base_url('assets/') . 'vendor/light-gallery/js/lightgallery-all.js"></script>',
+        'dropzone' => '<script src="' . base_url('assets/') . 'vendor/dropzone/dropzone.js"></script>'
+    ];
+    foreach ($plugin as $key => $value) {
+        echo $plugin_arr[$value];
+    }
+      
+        if (array_search('light-gallery', $plugin)!==false) {
+       
+            echo "<script>
+                $(function() {
+                    $('#aniimated-thumbnials').lightGallery({
+                        thumbnail: true,
+                        selector: 'a#galImg'
+                    });
+                });
+            </script>";
+        }
+        if (array_search('light-gallery', $plugin) !== false) {
 
-<!-- Demo Js -->
-<script src="<?php echo base_url('assets/')?>js/admin/demo.js"></script>
+            echo "<script>
+                $(function() {
+                    Dropzone.options.frmFileUpload = {
+                        acceptedFiles: 'image/*',
+                        maxFilesize: 3 // MB
+                    };
+                });
+            </script>";
+        }
+    }
+    ?>
 
-</body>
+ <!-- Custom Js -->
+ <script src="<?php echo base_url('assets/') ?>js/admin/admin.js"></script>
+
+ <!-- Demo Js -->
+ <script src="<?php echo base_url('assets/') ?>js/admin/demo.js"></script>
+
+ </body>

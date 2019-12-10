@@ -1,15 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_land extends MY_Model{
+class M_image extends MY_Model{
 
     function __construct() {
         parent::__construct();
-        parent::table('table_lands','id');
+        parent::table('table_images','id');
         
     }
 
-    private $table = 'table_lands';
+    private $table = 'table_images';
     private $id = 'id';
 
     public function fetch($data, $count=false){
@@ -21,7 +21,6 @@ class M_land extends MY_Model{
       return $query->result();
     }
     public function getWhere($data){
-      $this->db->order_by('id','desc');
       $query = $this->db->where($data)->get($this->table);
       return $query->result();
     }
@@ -59,4 +58,3 @@ class M_land extends MY_Model{
 
 
 }
-?>

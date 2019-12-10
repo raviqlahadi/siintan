@@ -24,7 +24,18 @@
           <a href="<?php echo site_url('home/profile') ?>" class="nav-link">Profil</a>
         </li>
         <li class="nav-item">
-          <a href="<?php echo site_url('auth/login') ?>" class="nav-link">Login</a>
+          <?php
+          if ($this->session->id == null) {
+            ?>
+            <a href="<?php echo site_url('auth/login') ?>" class="nav-link">Login</a>
+          <?php
+          } else {
+            ?>
+            <a href="<?php echo site_url('admin') ?>" class="nav-link">Dashboard</a>
+          <?php
+
+          }
+          ?>
         </li>
 
       </ul>

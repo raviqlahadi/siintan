@@ -42,7 +42,10 @@
     ];
     if(isset($plugin)){
       foreach ($plugin as $key => $value) {
-        echo $plugin_arr[$value];
+        if(isset($plugin_arr[$value])){
+            echo $plugin_arr[$value];
+        }
+        
       }
     }
   

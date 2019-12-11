@@ -34,7 +34,7 @@
                     case 'textarea':
                       $label =  $value['placeholder'];
                       unset($value['placeholder']);
-                      echo "<label class='form-label'>" . ucfirst($label) . "</label>";
+                      echo "<p text-mute'>" . ucfirst($label) . "</p><br>";
                       echo form_textarea($value);
                       break;
                     default:

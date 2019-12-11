@@ -15,16 +15,17 @@
 
  <?php
     if (isset($plugin)) {
-    $plugin_arr = [
-        'light-gallery' => '<script src="' . base_url('assets/') . 'vendor/light-gallery/js/lightgallery-all.js"></script>',
-        'dropzone' => '<script src="' . base_url('assets/') . 'vendor/dropzone/dropzone.js"></script>'
-    ];
-    foreach ($plugin as $key => $value) {
-        echo $plugin_arr[$value];
-    }
-      
-        if (array_search('light-gallery', $plugin)!==false) {
-       
+        $plugin_arr = [
+            'light-gallery' => '<script src="' . base_url('assets/') . 'vendor/light-gallery/js/lightgallery-all.js"></script>',
+            'dropzone' => '<script src="' . base_url('assets/') . 'vendor/dropzone/dropzone.js"></script>',
+            'ckeditor' => '<script src="' . base_url('assets/') . 'vendor/ckeditor/ckeditor.js"></script>'
+        ];
+        foreach ($plugin as $key => $value) {
+            echo $plugin_arr[$value];
+        }
+
+        if (array_search('light-gallery', $plugin) !== false) {
+
             echo "<script>
                 $(function() {
                     $('#aniimated-thumbnials').lightGallery({
@@ -34,7 +35,7 @@
                 });
             </script>";
         }
-        if (array_search('light-gallery', $plugin) !== false) {
+        if (array_search('dropzone', $plugin) !== false) {
 
             echo "<script>
                 $(function() {
@@ -47,7 +48,9 @@
         }
     }
     ?>
-
+ <script>
+     CKEDITOR.replace('description');
+ </script>
  <!-- Custom Js -->
  <script src="<?php echo base_url('assets/') ?>js/admin/admin.js"></script>
 

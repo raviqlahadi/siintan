@@ -96,6 +96,7 @@ class Region extends Admin_Controller
         } else {
             $form = $this->form_data;
         }
+        $this->data['plugin'] = ['ckeditor'];
         $this->data['breadcrumb'] = $this->setBreadcrumb();
         $this->data['form_data'] = $form;
         $this->data['form_action'] = site_url($this->current_page . '/create');

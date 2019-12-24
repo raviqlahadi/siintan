@@ -42,8 +42,7 @@ class Land extends Admin_Controller
         //fetch data from database
         //fetch data from database
         $fetch['select'] = ["id", "region_id", "instance", "land_owner",
-            "land_status", "compensation_type", "land_area",
-            "price", "total_price", "description", "document", "status_id"];
+            "land_status", "description", "document", "status_id"];
         $fetch['select_join'] = ['r.name as region_name', 's.name as status_name', 's.color as status_color'];
         $fetch['join'] = [
             array("table"=>"table_regions r","id"=>"region_id","join"=>"left","previx"=>"r"),
@@ -51,7 +50,7 @@ class Land extends Admin_Controller
         ];
         $fetch['start'] = $pagination['start_record'];
         $fetch['limit'] = $pagination['limit_per_page'];
-        $fetch['like'] = ($key != null && $key != '') ? array("name" => array('name', 'description'), "key" => $key) : null;
+        $fetch['like'] = ($key != null && $key != '') ? array("name" => array('table_lands.land_owner', 'table_lands.description'), "key" => $key) : null;
         $fetch['order'] = array("field" => "id", "type" => "ASC");
         $for_table = $this->m_land->fetch($fetch);
 
@@ -82,6 +81,25 @@ class Land extends Admin_Controller
         $this->render("admin/land/content");
     }
 
+    public function price_total($start, $limit, $key){
+        $this->load->model('m_compensations');
+        
+        //fetch data from database
+        $fetch['select'] = ['id', 'type', 'area', 'price'];
+        $fetch['start'] = $start;
+        $fetch['limit'] = $limit;
+        $fetch['like'] = ($key != null && $key != '') ? array("name" => array('type'), "key" => $key) : null;
+        $fetch['order'] = array("field" => "id", "type" => "ASC");
+       
+        $for_table = $this->m_compensations->fetch($fetch);
+        $full_total = 0;
+        foreach ($for_table as $key => $value) {
+            $total_price = floatval($value->area) * $value->price;
+            $value->total_price = $total_price;
+            $full_total = $full_total + $total_price;
+        }
+        
+    }
 
     public function create()
     {
@@ -92,7 +110,7 @@ class Land extends Admin_Controller
                 $this->load->library('upload');
                 $config['upload_path']          = './uploads/';
                 $config['allowed_types']        = 'jpg|jpeg|png|pdf|doc|docx';
-                $config['max_size']             = 10000;
+                $config['max_size']             = 100000;
                 $config['max_width']            = 10240;
                 $config['max_height']           = 10240;
 
@@ -398,8 +416,7 @@ class Land extends Admin_Controller
     {
         return [
             "id", "region_id", "instance", "land_owner",
-            "land_status", "compensation_type", "land_area",
-            "price", "total_price", "description", "document", "status_id"
+            "land_status", "description", "document", "status_id"
         ];
     }
 
@@ -408,8 +425,7 @@ class Land extends Admin_Controller
         $name = $this->name;
         $label = [
             "id", "kawasan", "instansi", "pemilik lahan",
-            "status lahan", "tipe konpensasi", "luas tanah (m2)",
-            "harga satuan(rp)", "total harga", "keterangan", "berkas", "status"
+            "status lahan", "keterangan", "berkas", "status"
         ];
         $label_arr = array();
         foreach ($name as $key => $value) {
@@ -425,8 +441,7 @@ class Land extends Admin_Controller
         $name = $this->name;
         $type =   [
             "number", "select", "text", "text",
-            "text", "text", "number",
-            "number", "number", "textarea", "file", "select"
+            "text", "textarea", "file", "select"
         ];
         $type_arr = array();
         foreach ($name as $key => $value) {

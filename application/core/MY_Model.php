@@ -17,7 +17,7 @@ class MY_Model extends CI_Model {
 	}
 
 	public function fetch_db($data, $count=false, $compiled=false){
-
+       
       $start = (isset($data['start'])) ? $data['start'] : null;
       $limit = (isset($data['limit'])) ? $data['limit'] : null;
       $where = (isset($data['where'])) ? $data['where'] : null;
@@ -26,6 +26,7 @@ class MY_Model extends CI_Model {
       $join = (isset($data['join'])) ? $data['join'] : null;
       $like = (isset($data['like'])) ? $data['like'] : null;
       $order = (isset($data['order'])) ? $data['order'] : null;
+      $group = (isset($data['group'])) ? $data['group'] : null;
 	
       if($count){
         $start = null;
@@ -96,23 +97,27 @@ class MY_Model extends CI_Model {
         $this->db->group_end();
       }
 
+     if($group!=null && is_array($group)){
+         
+        $this->db->group_by($group['field']);
+      }
+    
       if($order!=null && is_array($order)){
         $this->db->order_by($order['field'],$order['type']);
       }
-
+      
+      
+       
       if($limit!=null){
         $this->db->limit($limit, $start);
       }
       if(!$compiled){
         $query = ($count) ? $this->db->count_all_results() : $this->db->get()->result();
       }else{
-        $query =$this->db->get_compiled_select();
+        $query = $this->db->get_compiled_select();
       }
       
       return $query;
     }
 
 }
-
-
-?>

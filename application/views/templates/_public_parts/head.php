@@ -11,30 +11,31 @@
   <meta name="author" content="ThemesBoss" />
 
   <!-- Site Title -->
-  <title><?php echo APP_NAME?></title>
+  <title><?php echo APP_NAME ?></title>
 
   <!-- Site favicon -->
   <link rel="shortcut icon" href="">
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/public/')?>css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo base_url('assets/public/') ?>css/bootstrap.min.css" type="text/css">
 
   <!-- MFP Css -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/public/')?>css/magnific-popup.css">
+  <link rel="stylesheet" href="<?php echo base_url('assets/public/') ?>css/magnific-popup.css">
 
   <!-- Material Icon -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/public/')?>css/materialdesignicons.min.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/public/') ?>css/materialdesignicons.min.css" />
 
   <!-- Pe7 Icon -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/public/')?>css/pe-icon-7.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/public/') ?>css/pe-icon-7.css">
 
   <!-- Owl Slider -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/public/')?>css/owl.carousel.css" />
-  <link rel="stylesheet" href="<?php echo base_url('assets/public/')?>css/owl.theme.css" />
-  <link rel="stylesheet" href="<?php echo base_url('assets/public/')?>css/owl.transitions.css" />
+  <link rel="stylesheet" href="<?php echo base_url('assets/public/') ?>css/owl.carousel.css" />
+  <link rel="stylesheet" href="<?php echo base_url('assets/public/') ?>css/owl.theme.css" />
+  <link rel="stylesheet" href="<?php echo base_url('assets/public/') ?>css/owl.transitions.css" />
 
   <!-- Custom  Css -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/public/')?>css/style.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/public/') ?>css/style.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/public/') ?>css/main.min.css" />
 
 </head>
 

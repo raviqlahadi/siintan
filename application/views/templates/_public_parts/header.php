@@ -1,6 +1,6 @@
 <!--Navbar Start-->
 <nav class="navbar navbar-expand-lg fixed-top custom-nav sticky">
-  <div class="container">
+  <div class="container-fluid" style="padding-top:0px;padding-bottom:0px">
     <!-- LOGO -->
     <a class="logo navbar-brand" href="<?php echo site_url() ?>">
       <img src="<?php echo base_url('assets/public/') ?>images/logo.png" alt="" class="img-fluid logo-light">

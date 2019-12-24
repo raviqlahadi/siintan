@@ -15,7 +15,7 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
           <?php
-          $this->load->view('templates/_admin_parts/content_header');
+              $this->load->view('templates/_admin_parts/content_header');
 
           ?>
 
@@ -30,31 +30,33 @@
                   <?php endforeach; ?>
                   <th>Ploting</th>
                   <th>Gambar</th>
+                  <th>Kompensasi</th>
                   <th>Pilihan</th>
                 </tr>
               </thead>
               <tbody>
 
                 <?php
-                if (!empty($for_table)) : //if array data in not empty, show table
-                  $no = $number;
-                  foreach ($for_table as $key => $value) :
-                    $no++;
-                    ?>
+                      if (!empty($for_table)) : //if array data in not empty, show table
+                        $no = $number;
+                        foreach ($for_table as $key => $value) :
+                          $no++;
+                ?>
                     <tr>
                       <th scope="row"><?php echo $no ?></th>
                       <?php foreach ($table_header as $kh => $vh) : ?>
                         <td>
                           <?php
-                                if ($kh == 'status_name') {
-                                    echo '<span class="badge bg-'.$value->status_color. '">' . $value->status_name . '</span>';
-                                } else {
-                                  echo $value->{$kh};
-                                }
-                                ?></td>
+                                        if ($kh == 'status_name') {
+                                          echo '<span class="badge bg-' . $value->status_color . '">' . $value->status_name . '</span>';
+                                        } else {
+                                          echo $value->{$kh};
+                                        }
+                          ?></td>
                       <?php endforeach; ?>
                       <td><a href="<?php echo site_url($current_page . '/ploting/' . $value->id) ?>" class="btn btn-sm btn-primary waves-effect waves-block"><i class="material-icons">map</i></a></td>
                       <td><a href="<?php echo site_url($current_page . '/image/' . $value->id) ?>" class="btn btn-sm btn-primary waves-effect waves-block"><i class="material-icons">photo</i></a></td>
+                      <td><a href="<?php echo site_url($parent_page . '/compensation?land_id=' . $value->id) ?>" class="btn btn-sm btn-primary waves-effect waves-block"><i class="material-icons">money</i></a></td>
                       <td style="text-align:center">
                         <div class="dropdown">
                           <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -71,14 +73,14 @@
 
                     </tr>
                   <?php
-                    endforeach;
-                  else :
-                    ?>
+                                                    endforeach;
+                                                  else :
+                  ?>
                   <h3>Data Tidak Ditemukan</h3>
                 <?php endif; ?>
               </tbody>
               <tfoot>
-                <td colspan="<?php echo sizeof($table_header) + 3 ?>"><b>Total Data</b></td>
+                <td colspan="<?php echo sizeof($table_header) + 4 ?>"><b>Total Data</b></td>
                 <td class="text-center"><b><?php echo $total_data ?></b></td>
               </tfoot>
             </table>
@@ -93,6 +95,6 @@
 </section>
 
 <?php
-$this->load->view('templates/_admin_parts/modal_delete');
+                                                  $this->load->view('templates/_admin_parts/modal_delete');
 
 ?>

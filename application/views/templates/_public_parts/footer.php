@@ -60,11 +60,11 @@
 <script src="<?php echo base_url('assets/public/') ?>js/popper.min.js"></script>
 <script src="<?php echo base_url('assets/public/') ?>js/bootstrap.min.js"></script>
 <script src="<?php echo base_url('assets/public/') ?>js/jquery.easing.min.js"></script>
-<script src="<?php echo base_url('assets/public/') ?>js/scrollspy.min.js"></script>
+<!-- <script src="<?php echo base_url('assets/public/') ?>js/scrollspy.min.js"></script> -->
 
-<!-- Owl Js -->
+<!-- Owl Js 
 <script src="<?php echo base_url('assets/public/') ?>js/owl.carousel.min.js"></script>
-
+-->
 <!--Filter JS-->
 <script src="<?php echo base_url('assets/public/') ?>js/isotope.js"></script>
 
@@ -74,7 +74,11 @@
 <!-- Custom Js   -->
 <script src="<?php echo base_url('assets/public/') ?>js/custom.js"></script>
 
-
+<script>
+  $('.carousel').carousel({
+    interval: 5000
+  })
+</script>
 </body>
 
 </html>
